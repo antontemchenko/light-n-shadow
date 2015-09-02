@@ -3,38 +3,151 @@ html, body {
 	padding: 0;
 	background: #ddd;
 	color: #888;
-	font-size: 24px;
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     text-align: center;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+h1, p {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+h1 {
+    padding-top: 30px;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 24px;
 }
 
 .main {
 	display: inline-block;
 	position: relative;
 	background: #555;
-	padding-top: 20px;
-	height: 60%;
+	margin-top: 10%;
+	height: 20%;
 	width: 100%;
+	z-index: 2;
+	perspective: 1000px;
+}
+
+.main:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: -100%;
+	background: #ddd;
+	left: 0;
+	z-index: 2;
 }
 
 .box {
-	width: 50px;
-	height: 100px;
+	width: 160px;
+	height: 140px;
 	background: #888;
 	position: absolute;
-	bottom: 0;
+	bottom: 50%;
+	z-index: 3;
 	left: 50%;
 	transform: translateX(-50%);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.box .left, .box .right, .box .middle {
+    text-align: left;
+    width: 60px;
+    height: 128px;
+    font-size: 7px;
+    padding: 4px 10px;
+    bottom: 2px;
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box .left {
+	left: 0;
+	background: #ccc;
+    transform: rotateY(35deg);
+    box-shadow: -15px 3px 5px -3px rgba(0,0,0,.2);
+    transform-origin: right;
+}
+
+.box .right {
+	right: 0;
+	background: #eee;
+    transform: rotateY(-35deg);
+    box-shadow: 15px 3px 5px -3px rgba(0,0,0,.1);
+    transform-origin: left;
+}
+
+.box .middle {
+    transform: rotateY(82deg);
+    transform-origin: right;
+    right: 50%;
+    height: 128px;
+    bottom: 2px;
+    position: absolute;
+    background: rgb(230,230,230);
+    z-index: 4;
+    transform-style: preserve-3d;
+}
+
+.box .middle:after {
+	content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+    background: rgb(230,230,230);
+    box-shadow: -15px 3px 5px -3px rgba(0,0,0,.2);
+    z-index: 3;
+    right: 0;
+    height: 95%;
+    padding: 5%;
+    width: 90%;
+    bottom: 0;
+    position: absolute;
+    backface-visibility: hidden; 
+
+}
+
+.box .middle:before {
+	content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
+    position: absolute;
+    transform: rotateY(180deg);
+    background: rgb(230,230,230);
+    box-shadow: -15px 3px 5px -3px rgba(0,0,0,.2);
+    z-index: 3;
+    padding: 5%;
+    transform-origin: right;
+    right: 100%;
+    height: 95%;
+    width: 90%;
+    bottom: 0;
+    backface-visibility: hidden;
 }
 
 .shadow {
-	width: 50px;
-	height: 100px;
-	position: absolute;
-	background: #333;
-	bottom:0;
+	width: 160px;
+	height: 140px;
+	background: -webkit-linear-gradient(transparent, rgba(0,0,0,.3));
+	bottom: 50%;
 	left: 50%;
-	transform: translateX(-50%);	
+	z-index: 0;
+    position: absolute;
+    -webkit-transform: skew(35deg) translateX(-50%) rotateX(45deg);
+    -webkit-transform-origin: bottom;
+    -moz-transform: skew(35deg) translateX(-50%) rotateX(45deg);
+    -moz-transform-origin: bottom;
+    -ms-transform: skew(35deg) translateX(-50%) rotateX(45deg);
+    -ms-transform-origin: bottom;
+    -o-transform: skew(35deg) translateX(-50%) rotateX(45deg);
+    -o-transform-origin: bottom;
+    transform: skew(35deg) translateX(-50%) rotateX(45deg);
+    transform-origin: bottom;
 }
