@@ -34,6 +34,10 @@ p {
 	height: 20%;
 	width: 100%;
 	z-index: 2;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-ms-perspective: 1000px;
+	-o-perspective: 1000px;
 	perspective: 1000px;
 }
 
@@ -56,8 +60,20 @@ p {
 	bottom: 50%;
 	z-index: 3;
 	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-ms-perspective: 1000px;
+	-o-perspective: 1000px;
     perspective: 1000px;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
 
@@ -76,21 +92,45 @@ p {
 .box .left {
 	left: 0;
 	background: #ccc;
+	-webkit-transform: rotateY(35deg);
+	-moz-transform: rotateY(35deg);
+	-ms-transform: rotateY(35deg);
+	-o-transform: rotateY(35deg);
     transform: rotateY(35deg);
     box-shadow: -15px 3px 5px -3px rgba(0,0,0,.2);
+	-webkit-transform-origin: right;
+	-moz-transform-origin: right;
+	-ms-transform-origin: right;
+	-o-transform-origin: right;
     transform-origin: right;
 }
 
 .box .right {
 	right: 0;
 	background: #eee;
+	-webkit-transform: rotateY(-35deg);
+	-moz-transform: rotateY(-35deg);
+	-ms-transform: rotateY(-35deg);
+	-o-transform: rotateY(-35deg);
     transform: rotateY(-35deg);
     box-shadow: 15px 3px 5px -3px rgba(0,0,0,.1);
+	-webkit-transform-origin: left;
+	-moz-transform-origin: left;
+	-ms-transform-origin: left;
+	-o-transform-origin: left;
     transform-origin: left;
 }
 
 .box .middle {
+	-webkit-transform: rotateY(82deg);
+	-moz-transform: rotateY(82deg);
+	-ms-transform: rotateY(82deg);
+	-o-transform: rotateY(82deg);
     transform: rotateY(82deg);
+	-webkit-transform-origin: right;
+	-moz-transform-origin: right;
+	-ms-transform-origin: right;
+	-o-transform-origin: right;
     transform-origin: right;
     right: 50%;
     height: 128px;
@@ -98,6 +138,10 @@ p {
     position: absolute;
     background: rgb(230,230,230);
     z-index: 4;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
 
@@ -112,6 +156,10 @@ p {
     width: 90%;
     bottom: 0;
     position: absolute;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
     backface-visibility: hidden; 
 
 }
@@ -119,16 +167,28 @@ p {
 .box .middle:before {
 	content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
     position: absolute;
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
     transform: rotateY(180deg);
     background: rgb(230,230,230);
     box-shadow: -15px 3px 5px -3px rgba(0,0,0,.2);
     z-index: 3;
     padding: 5%;
+	-webkit-transform-origin: right;
+	-moz-transform-origin: right;
+	-ms-transform-origin: right;
+	-o-transform-origin: right;
     transform-origin: right;
     right: 100%;
     height: 95%;
     width: 90%;
     bottom: 0;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -136,6 +196,10 @@ p {
 	width: 160px;
 	height: 140px;
 	background: -webkit-linear-gradient(transparent, rgba(0,0,0,.3));
+	background: -moz-linear-gradient(transparent, rgba(0,0,0,.3));
+	background: -ms-linear-gradient(transparent, rgba(0,0,0,.3));
+	background: -o-linear-gradient(transparent, rgba(0,0,0,.3));
+	background: linear-gradient(transparent, rgba(0,0,0,.3));
 	bottom: 50%;
 	left: 50%;
 	z-index: 0;

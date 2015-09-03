@@ -29,9 +29,21 @@ $(document).ready(function(){
 		    "transform": "skew(" + transform + "deg)" + " translateX(-50%) rotateX(45deg)"
 		});
 
-		$(".box").css("transform", "translateX(-50%) rotateX(" + xBox + "deg) rotateY(" + yBox + "deg)");
+		$(".box").css({
+			"-webkit-transform": "translateX(-50%) rotateX(" + xBox + "deg) rotateY(" + yBox + "deg)",
+			"-moz-transform": "translateX(-50%) rotateX(" + xBox + "deg) rotateY(" + yBox + "deg)",
+			"-ms-transform": "translateX(-50%) rotateX(" + xBox + "deg) rotateY(" + yBox + "deg)",
+			"-o-transform": "translateX(-50%) rotateX(" + xBox + "deg) rotateY(" + yBox + "deg)",
+			"transform": "translateX(-50%) rotateX(" + xBox + "deg) rotateY(" + yBox + "deg)"
+		});
 
-		$(".middle").css("transform", "rotateY(" + page + "deg)");
+		$(".middle").css({
+			"-webkit-transform": "rotateY(" + page + "deg)",
+			"-moz-transform": "rotateY(" + page + "deg)",
+			"-ms-transform": "rotateY(" + page + "deg)",
+			"-o-transform": "rotateY(" + page + "deg)",
+			"transform": "rotateY(" + page + "deg)"
+		});
 
 		var bgLeft = "rgb(" + colorLeft + "," + colorLeft + "," + colorLeft + ")";
 		var bgRight = "rgb(" + colorRight + "," + colorRight + "," + colorRight + ")";
